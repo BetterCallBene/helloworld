@@ -40,8 +40,6 @@ if(BUILD_TESTING)
   add_subdirectory(tests)
 endif()
 
-
-
 # Add an alias target for use if this project is included as a subproject in another project
 add_library(helloworld::helloworld ALIAS helloworld)
 

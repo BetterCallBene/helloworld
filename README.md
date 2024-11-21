@@ -20,7 +20,7 @@ of the freshly cloned repository:
 ```
 mkdir build
 cd build
-cmake -DCMAKE_BUILD_TYPE=Release ..
+cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX:PATH=. ..
 cmake --build .
 ```
 
