@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.11)
 
 # Set a name and a version number for your project:
 project(helloworld VERSION 0.0.1 LANGUAGES CXX)
@@ -12,6 +12,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 
+
+
 # Compilation options
 
 # compile the library
@@ -21,10 +23,19 @@ add_subdirectory(src)
 # compile the application
 add_subdirectory(app)
 
+Include(FetchContent)
+
+FetchContent_Declare(
+  Catch2
+  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+  GIT_TAG        v3.4.0 # or a later release
+)
+
+FetchContent_MakeAvailable(Catch2)
+
 # compile the tests
 include(CTest)
 if(BUILD_TESTING)
-  find_package(Catch2 REQUIRED)
   include(Catch)
   add_subdirectory(tests)
 endif()
