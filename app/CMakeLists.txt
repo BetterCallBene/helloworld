@@ -1,0 +1,2 @@
+add_executable(helloworld_app helloworld_app.cpp)
+target_link_libraries(helloworld_app PRIVATE helloworld)
